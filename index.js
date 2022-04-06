@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const path = require("path")
 
-//includeee all the api scripts in the main js file
+//includeee3 all the api scripts in the main js file
 const userRoute = require("./routes/user");
 const authRoute = require("./routes/auth");
 const cartRoute = require("./routes/cart");
