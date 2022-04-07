@@ -2,10 +2,81 @@ import { ShoppingBasketOutlined, Search  } from '@material-ui/icons';
 import {logOut} from "../redux/userRedux"
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components"
-import { Badge } from "@material-ui/core"
+import { Badge, Button, Drawer, List, ListItem } from "@material-ui/core"
 import { mobile } from "../responisive"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { ClearCart } from '../redux/cartRedux';
+
+const Image = styled.img`
+width:200px;
+@media only screen and (max-width:732px){
+  
+    width:100px;
+    
+  }
+`
+const Details = styled.div`
+padding: 15px;
+display:flex;
+flex-direction:column;
+justify-content:space-around;
+`
+const ProductName = styled.span``
+const ProductId = styled.span``
+const ProductSize = styled.span``
+const PriceDetails= styled.div`
+flex:1;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+`
+const ProductColor = styled.div`
+width:20px;
+height:20px;
+border-radius:50%;
+background-color:${props=>props.color};
+
+`
+const ProductAmountContainer = styled.div`
+display:flex;
+align-items:center;
+margin-bottom:20px;
+
+`
+const ProductAmount = styled.div`
+font-size:24px;
+margin:5px;
+@media only screen and (max-width:732px){
+   font-size:15px;
+  }
+`
+const ProductPrice =styled.div`
+font-size:30px;
+font-weight:200;
+@media only screen and (max-width:732px){
+  
+   font-size:20px;
+    
+  }
+`
+const TopButton = styled.button`
+padding:10px;
+font-weight:600;
+cursor:pointer;
+border: ${props=>props.type === "filled" && "none"};
+background-color: ${props=>props.type === "filled" ? "black" : "transparent"};
+color: ${props=>props.type === "filled" && "white"}; 
+`
+const Product = styled.div`
+display:flex;
+justify-content:space-between;
+`
+const ProductDetails = styled.div`
+flex:2;
+display:flex;
+`
 const Container=styled.div`
  padding-left:28%;
   padding-right:28%;
@@ -143,6 +214,15 @@ const Navabar = () => {
   const [padding, setPadding] = useState("")
   const [margin, setMargin] = useState("")
   const [zdex, setzdex] = useState("")
+  const cart = useSelector(state => state.cart)
+ 
+    const dispatch = useDispatch();
+    const handleClick = (e) =>{
+        //update cart
+        e.preventDefault();
+        dispatch(ClearCart());
+        
+        };
    
 
   //logo scroll when active
@@ -193,10 +273,22 @@ const Navabar = () => {
 
   //logo scroll function
  
+  const [state,setState] = useState(false)
+  
+  const toggleDrawer = (open) => (event) => {
 
+    setState(open)
+  }
  
+  const list = () => {
+    <List>
+      <ListItem>Help hellllp</ListItem>
+    </List>
+    
+  }
   
   return(
+    
   
   <Container style={{backgroundColor:navbar, position:position, top:margin, zIndex:zdex}}>
    <Wrapper style={{padding:padding}} >
@@ -226,16 +318,49 @@ const Navabar = () => {
             
     
            <MenuItem>
-           <Scale>
-           <Link  style={{ textDecoration: 'none' }} to="/cart">
+           
+           <Button onClick={toggleDrawer(true)}>
            <Badge badgeContent={0} color="primary"style={{ color: '#BC8F4A', fontSize:"20px" }}>
             <ShoppingBasketOutlined/>   
            </Badge>
-           </Link>
-           </Scale>
+           </Button>
+           <Drawer 
+           style={{ zIndex:"6"}}
+           anchor={"right"}
+           open={state}
+           onClose={toggleDrawer(false)}
+           >
+           <p>cool yo yoooooooooooooooo</p>
+          
+           <TopButton onClick={handleClick} type="filled">Clear Cart</TopButton>
+           {cart.products.map(product=>(
+
+              <Product>
+                  <ProductDetails>
+                      <Image src={product.img}/>
+                      <Details>
+                          <ProductName><b>Product:</b>{product.title}</ProductName>
+                          <ProductId>{product.id}</ProductId>
+                          <ProductColor color={product.color}/>
+                          <ProductSize><b>Size:</b>{product.size}</ProductSize>
+                        
+                      </Details>
+                      
+                  </ProductDetails>
+                  <PriceDetails>
+                      <ProductAmountContainer>
+                          
+                          <ProductAmount>{product.quantity}:<b>Item</b></ProductAmount>
+                         
+                      </ProductAmountContainer>
+                      <ProductPrice>£{product.price}</ProductPrice>
+                  </PriceDetails>
+              </Product>
+              ))}
+               </Drawer>
+           
            </MenuItem>
-
-
+           
 
        </Right>
    </Wrapper>
