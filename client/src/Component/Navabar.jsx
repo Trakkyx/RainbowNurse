@@ -78,26 +78,31 @@ flex:2;
 display:flex;
 `
 const Container=styled.div`
- padding-left:28%;
-  padding-right:28%;
+margin:0px;
+ padding-left:160px;
+  padding-right:160px;
 color:white;
 z-index:0;
-background-color:#EBD3B1;
+background-color:white;
+width:80%;
 transition:all 1s ease;
 position:relative;
 align-items:center;
+text-align:center;
 justify-content:center;
-@media only screen and (max-width:900px){
-
-  padding-left:20%;
-  padding-right:20%;
-}
 @media only screen and (max-width:500px){
-
-  padding-left:10px;
-  padding-right:10px;
+ padding-left:5%;
+  padding-right:5%;
+  width:95%;
+}
+@media only screen and (max-width:990px){
+ padding-left:50px;
+  padding-right:50px;
+  width:95%;
 }
 
+
+  
 `
 
 
@@ -135,7 +140,7 @@ text-align:center;
 
 const Logo = styled.h1`
 font-weight:bold;
-transform:scale(1.1);
+transform:scale(1.6);
 padding:1%;
 font-size:20px;
 margin-left: 25px;
@@ -145,8 +150,17 @@ transition:all 0.5s ease;
 cursor:pointer;
 &:hover {
     color:#DAA520;
-    transform: scale(1.1);
+    transform: scale(1.8);
 }
+@media only screen and (max-width:800px){
+  
+   transform: scale(1.1);
+   &:hover {
+    color:#DAA520;
+    transform: scale(1.3);
+}
+    
+  }
 
 
 
@@ -246,11 +260,11 @@ const Navabar = () => {
 
       
     } else {
-       setNavbar("#EBD3B1")
+       setNavbar("white")
          setPosition("relative")
       
        setMargin("0px")
-       setzdex("0")
+       setzdex("4")
         setPadding("10px 20px")
     
     
@@ -290,13 +304,13 @@ const Navabar = () => {
   return(
     
   
-  <Container style={{backgroundColor:navbar, position:position, top:margin, zIndex:zdex}}>
-   <Wrapper style={{padding:padding}} >
+  <Container style={{backgroundColor:navbar, position:"fixed", top:margin, zIndex:zdex}}>
+   <Wrapper  >
        
        <Left>
         <Language>EN</Language>
         <Link to="/AboutUs" style={{ textDecoration: 'none' }}>
-           <MenuItem>Energy Drinks</MenuItem>
+           <MenuItem>NHS</MenuItem>
            </Link>
  
            <Link to="/AboutUs" style={{ textDecoration: 'none' }}>
@@ -304,14 +318,14 @@ const Navabar = () => {
            </Link>
           
        </Left>
-       <Center><Logo><Img src="https://i.ibb.co/XWdKgrm/Next-Level-Logo-removebg-preview-1.png"></Img></Logo></Center>
+       <Center><Logo><Img src="https://rainbownurses.com/wp-content/uploads/2022/02/Untitled.png"></Img></Logo></Center>
        <Right>
             <Link to ="/products/candle" style={{ textDecoration: 'none' }} >
-           <SubMenuItem>Reviews</SubMenuItem>
+           <SubMenuItem>Nurses</SubMenuItem>
            </Link>
            
            <Link to ="/products/diffuser" style={{ textDecoration: 'none' }}>
-           <MenuItem>Party Drinks</MenuItem>
+           <MenuItem>Shop</MenuItem>
            </Link>
          
             
@@ -320,7 +334,7 @@ const Navabar = () => {
            <MenuItem>
            
            <Button onClick={toggleDrawer(true)}>
-           <Badge badgeContent={0} color="primary"style={{ color: '#BC8F4A', fontSize:"20px" }}>
+           <Badge badgeContent={0} color="primary"style={{ color: 'black', fontSize:"20px" }}>
             <ShoppingBasketOutlined/>   
            </Badge>
            </Button>
@@ -364,7 +378,6 @@ const Navabar = () => {
 
        </Right>
    </Wrapper>
-   <Line style={{border:"solid 0.5px", borderRadius:"2px", color:"black", fontSize:"1.5rem"}}/>
   </Container>
   );
 };

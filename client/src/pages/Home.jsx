@@ -21,13 +21,10 @@ import GoodOrderQualities from '../Component/GoodOrderQualities';
 const Home = () => {
   return(
   <div>
-  <Annoncement/>
+  
   <Navabar/>
   <Landing_image/>
-  <GoodQualities/>
-  <Products/>
-  <Karousel/>
-  <GoodOrderQualities/>
+
   <Footer/>
   </div>
   );
