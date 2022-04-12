@@ -4,8 +4,8 @@ import styled from "styled-components"
 
 const Container = styled.div`
 display:flex;
-background-color:#282728;
-color:white;
+background-color:lightblue;
+color:black;
 padding-left:10%;
 padding-right:10%;
 @media only screen and (max-width:1000px){
@@ -89,7 +89,7 @@ align-iems:center;
 `
 
 const Img = styled.img`
-width:20%;
+width:60%;
 `
 
 const Input = styled.input`
@@ -117,14 +117,12 @@ const Footer = () => {
 
     <Container>
      <Left>
-         <Img src="https://i.ibb.co/XWdKgrm/Next-Level-Logo-removebg-preview-1.png"></Img>
-         <Desc>
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-         </Desc>
-         <Desc>Get timely updates for all your favorite products!</Desc>
+         <Img src="https://rainbownurses.com/wp-content/uploads/2022/02/Untitled.png"></Img>
+         
+
          <InputContainer>
          <Input placeholder="Enter Your Email Here"/>
-         <Button>
+         <Button style={{backgroundColor:"lightgreen"}}>
           <Send/>
          </Button>
          </InputContainer>
@@ -132,43 +130,38 @@ const Footer = () => {
          <SocialIcon color="3B5999">
              <Facebook/>
          </SocialIcon>
-         <SocialIcon color="55ACEE">
-             <Twitter/>
-         </SocialIcon>
          <SocialIcon color="E4405F">
              <Instagram/>
          </SocialIcon>
-         <SocialIcon color="E60023">
-             <Pinterest/>
-         </SocialIcon>
+        
      </SocialContainer>
      </Left>
      <Center>  
      <Title>Useful Links</Title>
      <List>
-      <ListItem>Order Tracking</ListItem>
-      <ListItem>Terms</ListItem>
-      <ListItem>T&Cs</ListItem>
-      <ListItem>Shipping & Returns</ListItem>
-      <ListItem>Reviews</ListItem>
-      <ListItem>Party Drinks</ListItem>
-      <ListItem>Energy Drinks</ListItem>
-      <ListItem>Gift Cards</ListItem>
+       
+      <ListItem><b>Shop</b></ListItem>
+      <ListItem><b>Refunds & Returns</b></ListItem>
+      <ListItem><b>Terms & Conditions</b></ListItem>
+      <ListItem><b>NHS</b></ListItem>
+      <ListItem><b>Nurses</b></ListItem>
+      <ListItem><b>Home</b></ListItem>
+      <ListItem><b>About Us</b></ListItem>
+      <ListItem><b>Youtube</b></ListItem>
+      
+      
      </List>
      </Center>
      <Right>
     <Title>Contact Us</Title>
-     <ContactItem>
-      <Room style={{marginRight:"10px"}}/>
-      Flixton Road 432, Manchester
-     </ContactItem>
+    
      <ContactItem>
       <Phone style={{marginRight:"10px"}}/>
-      0777898374
+     07776 189458
      </ContactItem>
      <ContactItem>
       <MailOutline style={{marginRight:"10px"}}/>
-      Contact@gmail.com
+      info@rainbownurses.com
      </ContactItem>
 
      </Right>

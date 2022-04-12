@@ -11,6 +11,7 @@ import Landing_image from '../Component/Landing_image';
 import GoodQualities from '../Component/GoodQualities';
 import Karousel from '../Component/Karousel';
 import GoodOrderQualities from '../Component/GoodOrderQualities';
+import NHSHOME from '../Component/NHSHOME';
 
 
 
@@ -24,6 +25,8 @@ const Home = () => {
   
   <Navabar/>
   <Landing_image/>
+  <GoodQualities/>
+  <NHSHOME/>
 
   <Footer/>
   </div>

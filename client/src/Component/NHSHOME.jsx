@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Assignment, LocalDrink,Stars  } from '@material-ui/icons';
 
 const Container= styled.div`
-background-color:white;
+background-color:lightgrey;
 
 padding:0px;
 margin:0px;
@@ -14,8 +14,8 @@ padding-right:150px;
 `
 const Image=styled.img`
 
-width:30%;
-height:30%;
+width:100%;
+height:100%;
 
 `
 const Title = styled.h1`
@@ -36,7 +36,7 @@ padding-bottom:10px;
 `
 
 const Wrapper = styled.div`
-display:block;
+display:flex;
 justify-content:space-between;
 justify:content:center;
 align-items:center;
@@ -65,7 +65,7 @@ font-size:20px;
 }
 `
 const Qdesc = styled.div `
-display:block;
+display:flex;
 
 
 `
@@ -74,7 +74,7 @@ display:block;
 
 const Quality = styled.div`
 padding:2%;
-display:flex;
+display:block;
 
 `
 const Desc = styled.p`
@@ -93,33 +93,36 @@ justify-content:center;
 
  padding-bottom:30px;
 `
-
-const GoodQualities= () => {
+const Rdesc = styled.div`
+display:block:
+`
+const NHSHOME= () => {
   return (
    <Container>
      <Wrapper>
        <Quality>
-
-       <Qdesc style={{textAlign:"left"}}>
-        <Desc style={{fontSize:"30px"}}><b>Who are the Rainbow Nurses.</b></Desc>
-        <Desc>The Rainbow Nurses are Hope, Nala and Sammie. They are here to heal the human race and teach us everything they have learnt exploring the galaxy.</Desc>
-        <Button>Read More</Button>
+        <Image src="https://i0.wp.com/rainbownurses.com/wp-content/uploads/2022/03/a368f881e3b5e0b62d95192422f6c7d1.png?fit=1100%2C395&ssl=1"/>
+       <Qdesc style={{textAlign:"center"}}>
+       <Rdesc>
+        <Desc style={{fontSize:"15px"}}><b>Helping Lighten The Load.</b></Desc>
+         <Desc style={{fontSize:"15px"}}>Helping fund new equipment to make work easier for eveyone</Desc>
+        </Rdesc>
+        <Rdesc>
+                  <Desc style={{fontSize:"15px"}}><b>Save Our NHS Together</b></Desc>
+         <Desc style={{fontSize:"15px"}}>Help us protect our NHS together for generations to come</Desc> 
+         </Rdesc>
         </Qdesc>
-       <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/wp-0e1e286abe7a622b80fa8aaad8d79bc3-655x368x0x0x655x368x1643983566.jpg"/>
-       </Quality>
-        <Quality >
-          <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-28-2-611x344x5x0x601x344x1648643462.jpg"/>
-     
       
-       <Qdesc style={{textAlign:"right", marginLeft:"30%"}}>
-        <Desc style={{fontSize:"30px"}}><b>What are we about.</b></Desc>
-        <Desc>To learn more about the creation of the Rainbow Nurses click below.</Desc>
+       </Quality>
+       <Quality style={{margin:"0px",textAlign:"left"}}>
+        <Desc style={{fontSize:"30px", margin:"3%"}}><b>Our Partnership with the NHS Charities Together.</b></Desc>
+        <Desc style={{margin:"3%"}}>We got in-touch with Charities together as we feel the NHS is owed a lot for all it's work through the pandemic. </Desc>
         <Button>Read More</Button>
-        </Qdesc>
-        </Quality>
+         
+       </Quality>
      </Wrapper>
    </Container>
   );
 };
 
-export default GoodQualities;
+export default NHSHOME;
