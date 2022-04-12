@@ -4,6 +4,20 @@ import ReactPlayer from "react-player";
 
 const Container= styled.div`
 background-color:white;
+
+@media only screen and (max-width:3000px){
+    height:1300px;
+  }
+@media only screen and (max-width:2000px){
+    height:900px;
+  }
+  @media only screen and (max-width:1000px){
+    height:700px;
+  }
+    @media only screen and (max-width:700px){
+    height:300px;
+  }
+
 `
 const Image=styled.img`
 width:100%;
@@ -15,7 +29,7 @@ const Info= styled.div`
 position: relative;
 width:100%;
 height:100%;
-bottom:300px;
+bottom:700px;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -37,20 +51,22 @@ display:relative;
 `
 const Button= styled.button`
 border:none;
-padding: 10px;
+padding:20px;
+padding-left:30px;
+padding-right:30px;
 border-radius: 15px;
-background-color:blue;
+background-color:lightblue;
 color:black;
 cursor:pointer;
 font-weight:600;
-font-size:40px;
+font-size:20px;
 @media only screen and (max-width:800px){
     font-size:20px;
   }
   transition:all 0.5s ease;
 &:hover{
-    background-color:lightblue;
-    color:lightblue;
+    background-color:darkblue;
+    color:white;
 }
 `
 
@@ -64,8 +80,9 @@ const Landing_image= () => {
     loop={true} 
     controls={false}
     muted
+    
   width="100%"
-  height="700px"
+  height="100%"
   
   
 

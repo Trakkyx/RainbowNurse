@@ -79,12 +79,12 @@ display:flex;
 `
 const Container=styled.div`
 margin:0px;
- padding-left:160px;
+ padding-left:30px;
   padding-right:160px;
 color:white;
 z-index:0;
 background-color:white;
-width:80%;
+width:90%;
 transition:all 1s ease;
 position:relative;
 align-items:center;
@@ -96,7 +96,7 @@ justify-content:center;
   width:95%;
 }
 @media only screen and (max-width:990px){
- padding-left:50px;
+ padding-left:10px;
   padding-right:50px;
   width:95%;
 }
