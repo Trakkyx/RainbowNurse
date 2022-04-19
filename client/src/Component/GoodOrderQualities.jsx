@@ -7,8 +7,8 @@ background-color:white;
 
 padding:0px;
 margin:0px;
-padding-top:10%;
-padding-bottom:10%;
+padding-top:10px;
+padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
 `

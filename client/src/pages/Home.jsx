@@ -12,6 +12,7 @@ import GoodQualities from '../Component/GoodQualities';
 import Karousel from '../Component/Karousel';
 import GoodOrderQualities from '../Component/GoodOrderQualities';
 import NHSHOME from '../Component/NHSHOME';
+import GoodQualitiesBottom from '../Component/GoodQualitiesaBottom';
 
 
 
@@ -26,6 +27,7 @@ const Home = () => {
   <Navabar/>
   <Landing_image/>
   <GoodQualities/>
+  <GoodQualitiesBottom/>
   <NHSHOME/>
 
   <Footer/>

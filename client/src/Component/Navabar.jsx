@@ -121,6 +121,14 @@ cursor:pointer;
 `
 const Wrapper=styled.div`
 padding:10px 20px;
+@media only screen and (max-width:950px){
+
+  padding:5px 10px;
+}
+@media only screen and (max-width:500px){
+
+  padding:2.5px 5px;
+}
 display:flex;
 justify-content:space-between;
 

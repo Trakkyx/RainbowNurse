@@ -7,8 +7,8 @@ background-color:white;
 
 padding:0px;
 margin:0px;
-padding-top:10%;
-padding-bottom:10%;
+padding-top:10px;
+padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
 `
@@ -107,16 +107,6 @@ const GoodQualities= () => {
         </Qdesc>
        <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/wp-0e1e286abe7a622b80fa8aaad8d79bc3-655x368x0x0x655x368x1643983566.jpg"/>
        </Quality>
-        <Quality >
-          <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-28-2-611x344x5x0x601x344x1648643462.jpg"/>
-     
-      
-       <Qdesc style={{textAlign:"right", marginLeft:"30%"}}>
-        <Desc style={{fontSize:"30px"}}><b>What are we about.</b></Desc>
-        <Desc>To learn more about the creation of the Rainbow Nurses click below.</Desc>
-        <Button>Read More</Button>
-        </Qdesc>
-        </Quality>
      </Wrapper>
    </Container>
   );

@@ -3,19 +3,19 @@ import styled from "styled-components";
 import { Assignment, LocalDrink,Stars  } from '@material-ui/icons';
 
 const Container= styled.div`
-background-color:white;
+background-color:lightgrey;
 
 padding:0px;
 margin:0px;
-padding-top:10%;
-padding-bottom:10%;
+padding-top:10px;
+padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
 `
 const Image=styled.img`
 
-width:100%;
-height:100%;
+width:30%;
+height:30%;
 
 `
 const Title = styled.h1`
@@ -36,7 +36,7 @@ padding-bottom:10px;
 `
 
 const Wrapper = styled.div`
-display:flex;
+display:block;
 justify-content:space-between;
 justify:content:center;
 align-items:center;
@@ -65,7 +65,7 @@ font-size:20px;
 }
 `
 const Qdesc = styled.div `
-display:flex;
+display:block;
 
 
 `
@@ -74,7 +74,7 @@ display:flex;
 
 const Quality = styled.div`
 padding:2%;
-display:block;
+display:flex;
 
 `
 const Desc = styled.p`
@@ -93,37 +93,25 @@ justify-content:center;
 
  padding-bottom:30px;
 `
-const Rdesc = styled.div`
-display:block:
-`
-const NHSHOME= () => {
+
+const GoodQualitiesBottom= () => {
   return (
    <Container>
      <Wrapper>
-       <Quality>
-        <Image src="https://i0.wp.com/rainbownurses.com/wp-content/uploads/2022/03/a368f881e3b5e0b62d95192422f6c7d1.png?fit=1100%2C395&ssl=1"/>
-       <Qdesc style={{textAlign:"center"}}>
-       <Rdesc>
-        <Desc style={{fontSize:"15px"}}><b>Helping Lighten The Load.</b></Desc>
-         <Desc style={{fontSize:"15px"}}>Helping fund new equipment to make work easier for eveyone</Desc>
-        </Rdesc>
-        <Rdesc>
-                  <Desc style={{fontSize:"15px"}}><b>Save Our NHS Together</b></Desc>
-         <Desc style={{fontSize:"15px"}}>Help us protect our NHS together for generations to come</Desc> 
-         </Rdesc>
-        </Qdesc>
-      
-       </Quality>
+
+        <Quality >
+          <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-28-2-611x344x5x0x601x344x1648643462.jpg"/>
      
-       <Quality style={{margin:"0px",textAlign:"left"}}>
-        <Desc style={{fontSize:"30px", margin:"3%"}}><b>Our Partnership with the NHS Charities Together.</b></Desc>
-        <Desc style={{margin:"3%"}}>We got in-touch with Charities together as we feel the NHS is owed a lot for all it's work through the pandemic. </Desc>
+      
+       <Qdesc style={{textAlign:"right", marginLeft:"40%"}}>
+        <Desc style={{fontSize:"30px"}}><b>What are we about.</b></Desc>
+        <Desc>To learn more about the creation of the Rainbow Nurses click below.</Desc>
         <Button>Read More</Button>
-         
-       </Quality>
+        </Qdesc>
+        </Quality>
      </Wrapper>
    </Container>
   );
 };
 
-export default NHSHOME;
+export default GoodQualitiesBottom;

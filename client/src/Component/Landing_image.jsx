@@ -5,16 +5,40 @@ import ReactPlayer from "react-player";
 const Container= styled.div`
 background-color:white;
 
-@media only screen and (max-width:3000px){
-    height:1300px;
+
+  @media only screen and (max-width:2000px){
+    height:1100px;
   }
-@media only screen and (max-width:2000px){
+  @media only screen and (max-width:1830px){
+    height:1000px;
+  }
+  @media only screen and (max-width:1700px){
     height:900px;
   }
-  @media only screen and (max-width:1000px){
+  @media only screen and (max-width:1500px){
+    height:800px;
+  }
+  @media only screen and (max-width:1300px){
     height:700px;
   }
+  @media only screen and (max-width:1110px){
+    height:600px;
+  }
+  @media only screen and (max-width:1110px){
+    height:550px;
+  }
+  @media only screen and (max-width:1000px){
+    height:450px;
+  }
+  
+  
+  
+
+
     @media only screen and (max-width:700px){
+    height:350px;
+  }
+  @media only screen and (max-width:500px){
     height:300px;
   }
 
@@ -29,13 +53,19 @@ const Info= styled.div`
 position: relative;
 width:100%;
 height:100%;
-bottom:700px;
+bottom:900px;
+right:400px;
 display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
-@media only screen and (max-width:1000px){
+@media only screen and (max-width:1420px){
+    
+    right:300px;
+  }
+  @media only screen and (max-width:1000px){
     top:100px;
+    right:50px;
   }
 `
 const Title= styled.h1`
@@ -51,6 +81,7 @@ display:relative;
 `
 const Button= styled.button`
 border:none;
+text-align:left;
 padding:20px;
 padding-left:30px;
 padding-right:30px;
