@@ -8,7 +8,7 @@ background-color:lightgrey;
 padding:0px;
 margin:0px;
 padding-top:10px;
-padding-bottom:10px;
+padding-bottom:10%;
 padding-left:150px;
 padding-right:150px;
 `
@@ -46,6 +46,7 @@ align-items:center;
 `
 const Button= styled.button`
 border:none;
+margin-right:1.2%;
 padding:20px;
 padding-left:30px;
 padding-right:30px;

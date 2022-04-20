@@ -84,21 +84,22 @@ margin:0px;
 color:white;
 z-index:0;
 background-color:white;
-width:90%;
+width:100%;
 transition:all 1s ease;
 position:relative;
 align-items:center;
 text-align:center;
 justify-content:center;
+justify-content:space-around;
 @media only screen and (max-width:500px){
  padding-left:5%;
   padding-right:5%;
-  width:95%;
+  width:100%;
 }
 @media only screen and (max-width:990px){
  padding-left:10px;
   padding-right:50px;
-  width:95%;
+  width:100%;
 }
 
 

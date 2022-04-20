@@ -7,7 +7,7 @@ background-color:white;
 
 padding:0px;
 margin:0px;
-padding-top:10px;
+padding-top:10%;
 padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
@@ -50,6 +50,7 @@ padding:20px;
 padding-left:30px;
 padding-right:30px;
 border-radius: 15px;
+margin-left:1.8%;
 background-color:lightblue;
 color:black;
 cursor:pointer;

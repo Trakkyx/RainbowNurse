@@ -47,6 +47,7 @@ align-items:center;
 const Button= styled.button`
 border:none;
 padding:20px;
+margin-left:3%;
 padding-left:30px;
 padding-right:30px;
 border-radius: 15px;

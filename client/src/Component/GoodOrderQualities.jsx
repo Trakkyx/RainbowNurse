@@ -7,7 +7,7 @@ background-color:white;
 
 padding:0px;
 margin:0px;
-padding-top:10px;
+padding-top:10%;
 padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
@@ -18,6 +18,7 @@ font-size:22px;
 padding: 18px;
 padding-right:21%;
 padding-left:21%;
+
 
 margin-top:10%;
 margin-left:20%;
