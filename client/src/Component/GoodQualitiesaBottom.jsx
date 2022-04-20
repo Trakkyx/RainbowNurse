@@ -11,11 +11,23 @@ padding-top:10px;
 padding-bottom:10%;
 padding-left:150px;
 padding-right:150px;
+@media only screen and (max-width:600px){
+padding:20px;
+}
 `
 const Image=styled.img`
 
-width:30%;
-height:30%;
+width:40%;
+height:40%;
+@media only screen and (max-width:1300px){
+  width:50%;
+  height:50%;
+}
+@media only screen and (max-width:1000px){
+  width:300px;
+  height:200px;
+}
+
 
 `
 const Title = styled.h1`
@@ -56,8 +68,8 @@ color:black;
 cursor:pointer;
 font-weight:600;
 font-size:20px;
-@media only screen and (max-width:800px){
-    font-size:20px;
+@media only screen and (max-width:1300px){
+    font-size:15px;
   }
   transition:all 0.5s ease;
 &:hover{
@@ -67,6 +79,21 @@ font-size:20px;
 `
 const Qdesc = styled.div `
 display:block;
+padding:0px;
+margin-left:30%;
+text-align:right;
+@media only screen and (max-width:1400px){
+    
+  margin-left:20%;
+ 
+}
+@media only screen and (max-width:1000px){
+ text-align:center;
+ margin:0px;
+ padding:3%;
+}
+
+
 
 
 `
@@ -76,12 +103,28 @@ display:block;
 const Quality = styled.div`
 padding:2%;
 display:flex;
+flex-direction: row-reverse;
+@media only screen and (max-width:1000px){
+  display:block;
+  text-align:center;
+  align-items:center;
+}
 
 `
 const Desc = styled.p`
+padding:0px;
 padding-top:10px;
 padding-bottom:10px;
-
+font-size:20px;
+@media only screen and (max-width:1300px){
+    
+  
+  font-size:15px;
+}
+@media only screen and (max-width:1000px){
+  text-align:center;
+  margin:0px;
+ }
 margin:2%;
 
 
@@ -101,15 +144,17 @@ const GoodQualitiesBottom= () => {
      <Wrapper>
 
         <Quality >
-          <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-28-2-611x344x5x0x601x344x1648643462.jpg"/>
+          
      
       
-       <Qdesc style={{textAlign:"right", marginLeft:"40%"}}>
+       <Qdesc >
         <Desc style={{fontSize:"30px"}}><b>What are we about.</b></Desc>
         <Desc>To learn more about the creation of the Rainbow Nurses click below.</Desc>
         <Button>Read More</Button>
         </Qdesc>
+        <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-28-2-611x344x5x0x601x344x1648643462.jpg"/>
         </Quality>
+        
      </Wrapper>
    </Container>
   );

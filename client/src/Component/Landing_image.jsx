@@ -50,8 +50,10 @@ width:100%;
 height:100%;
 object-fit:contain;
 position:relative;
+
 `
 const Info= styled.div`
+margin-left:3%;
 position: relative;
 width:100%;
 height:100%;
@@ -65,6 +67,7 @@ bottom:600px;
   bottom:200px;
 }
 
+
 display:flex;
 align-items:left;
 text-align:left;
@@ -77,18 +80,23 @@ margin-bottom:20px;
 text-align:left;
 font-size:40px;
 display:relative;
-@media only screen and (max-width:800px){
+@media only screen and (max-width:900px){
     
-    font-size:20px;
-  }
-  @media only screen and (max-width:1100px){
-    font-size:30px;
-  }
+  font-size:15px;
+}
+@media only screen and (max-width:900px){
+    
+  font-size:12px;
+}
+
+@media only screen and (max-width:1100px){
+  font-size:30px;
+}
 `
 const Button= styled.button`
 border:none;
 text-align:left;
-width:10%;  
+width:170px;  
 padding:20px;
 item-align:left;
 padding-left:30px;
@@ -96,19 +104,26 @@ padding-right:30px;
 border-radius: 15px;
 background-color:lightblue;
 color:black;
-@media only screen and (max-width:1600px){
-  width:15%;
+
+@media only screen and (max-width:1400px){
+    
+  font-size:15px;
+  
+ 
 }
-@media only screen and (max-width:1600px){
-  width:20%;
+@media only screen and (max-width:700px){
+    
+  font-size:15px;
+  width:140px;
+ 
 }
+
+
 
 cursor:pointer;
 font-weight:600;
 font-size:20px;
-@media only screen and (max-width:800px){
-    font-size:20px;
-  }
+
   transition:all 0.5s ease;
 &:hover{
     background-color:darkblue;

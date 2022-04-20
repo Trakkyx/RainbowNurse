@@ -11,11 +11,22 @@ padding-top:10%;
 padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
+@media only screen and (max-width:600px){
+  padding:20px;
+  }
 `
 const Image=styled.img`
 
-width:30%;
-height:30%;
+width:40%;
+height:40%;
+@media only screen and (max-width:1300px){
+  width:50%;
+  height:50%;
+}
+@media only screen and (max-width:1000px){
+  width:300px;
+  height:200px;
+}
 
 `
 const Title = styled.h1`
@@ -56,17 +67,27 @@ color:black;
 cursor:pointer;
 font-weight:600;
 font-size:20px;
-@media only screen and (max-width:800px){
-    font-size:20px;
-  }
+@media only screen and (max-width:1300px){
+  font-size:15px;
+}
   transition:all 0.5s ease;
 &:hover{
     background-color:darkblue;
     color:white;
 }
+@media only screen and (max-width:1000px){
+  text-align:center;
+  margin:0px;
+ }
 `
 const Qdesc = styled.div `
 display:block;
+text-align:left;
+@media only screen and (max-width:1000px){
+  text-align:center;
+  margin:0px;
+  padding:2%;
+ }
 
 
 `
@@ -76,13 +97,22 @@ display:block;
 const Quality = styled.div`
 padding:2%;
 display:flex;
-
+@media only screen and (max-width:1000px){
+  display:block;
+  text-align:center;
+  align-items:center;
+}
 `
 const Desc = styled.p`
 padding-top:10px;
 padding-bottom:10px;
-
+font-size:20px;
 margin:2%;
+@media only screen and (max-width:1300px){
+    
+  
+  font-size:15px;
+}
 
 
 `
@@ -101,7 +131,7 @@ const GoodQualities= () => {
      <Wrapper>
        <Quality>
 
-       <Qdesc style={{textAlign:"left"}}>
+       <Qdesc >
         <Desc style={{fontSize:"30px"}}><b>Who are the Rainbow Nurses.</b></Desc>
         <Desc>The Rainbow Nurses are Hope, Nala and Sammie. They are here to heal the human race and teach us everything they have learnt exploring the galaxy.</Desc>
         <Button>Read More</Button>

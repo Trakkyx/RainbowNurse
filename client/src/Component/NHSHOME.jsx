@@ -11,6 +11,9 @@ padding-top:10%;
 padding-bottom:10%;
 padding-left:150px;
 padding-right:150px;
+@media only screen and (max-width:700px){
+  padding:0px;
+  }
 `
 const Image=styled.img`
 
@@ -40,6 +43,10 @@ display:flex;
 justify-content:space-between;
 justify:content:center;
 align-items:center;
+@media only screen and (max-width:1000px){
+  padding:20px;
+  display:block;
+  }
 
 
 
@@ -67,6 +74,9 @@ font-size:20px;
 `
 const Qdesc = styled.div `
 display:flex;
+@media only screen and (max-width:1000px){
+  padding:20px;
+  }
 
 
 `
@@ -76,6 +86,10 @@ display:flex;
 const Quality = styled.div`
 padding:2%;
 display:block;
+text-align:left;
+@media only screen and (max-width:1000px){
+  text-align:center;
+  }
 
 `
 const Desc = styled.p`
@@ -116,7 +130,7 @@ const NHSHOME= () => {
       
        </Quality>
      
-       <Quality style={{margin:"0px",textAlign:"left"}}>
+       <Quality style={{margin:"0px"}}>
         <Desc style={{fontSize:"30px", margin:"3%"}}><b>Our Partnership with the NHS Charities Together.</b></Desc>
         <Desc style={{margin:"3%"}}>We got in-touch with Charities together as we feel the NHS is owed a lot for all it's work through the pandemic. </Desc>
         <Button>Read More</Button>
