@@ -14,7 +14,8 @@ import { useDispatch } from "react-redux";
 import Upsale from '../Component/Upsale';
 import Products from '../Component/Products';
 import Slider from '../Component/Slider';
-
+import { IconButton, Snackbar} from '@material-ui/core';
+import MuiAlert from '@mui/material/Alert';
 
 const Container = styled.div``
 const Wrapper = styled.div`
@@ -95,6 +96,7 @@ const AmountContainer = styled.div`
 display:flex;
 align-items:center;
 font-weight:700;
+cursor:pointer;
 
 `
 const Amount = styled.span`
@@ -135,10 +137,16 @@ margin:0px 5px;
 cursor:pointer;
 `
 const Product = () => {
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+  
 const location = useLocation();
 const id = location.pathname.split("/")[2]; 
 const [product, setProduct] = useState({});
 const [quantity, setQuantity] = useState(1);
+const [open, setOpen] = useState(false);
+
 const dispatch = useDispatch();
 useEffect(()=>{
 const getProduct = async ()=>{
@@ -160,10 +168,36 @@ const handleQuantity = (type) => {
 };
 const handleClick = () =>{
 //update cart
+setOpen(true);
 dispatch(
 addProduct({...product, quantity, price:product.price * quantity}));
 
+
 };
+
+const handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+
+    return;
+   
+  }
+  setOpen(false);
+};
+const action = (
+  <React.Fragment>
+    <Button color="secondary" size="small" onClick={handleClose}>
+      UNDO
+    </Button>
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleClose}
+    >
+     
+    </IconButton>
+  </React.Fragment>
+);
   return (
   <Container>
       <Navabar/>
@@ -183,6 +217,11 @@ addProduct({...product, quantity, price:product.price * quantity}));
             <Add onClick={()=>handleQuantity("inc")}/>
                </AmountContainer>
               <Button onClick={handleClick}>ADD TO CART</Button>
+              <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                       Added To Cart
+                    </Alert>
+                   </Snackbar>
             </AddContainer>
               <Desc>{product.desc}</Desc>
             

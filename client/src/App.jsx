@@ -13,10 +13,12 @@ import {
  } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AboutUs from "./pages/AboutUs";
+import { ToastContainer } from "react-toastify"
 const App = () => {
   const user =useSelector(state=>state.user.currentUser);
   return (
     <Router>
+      <ToastContainer/>
       <Switch>
        <Route exact path="/">
           <Home/>

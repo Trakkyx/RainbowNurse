@@ -6,7 +6,8 @@ import { Badge, Button, Drawer, List, ListItem } from "@material-ui/core"
 import { mobile } from "../responisive"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ClearCart } from '../redux/cartRedux';
+import { ClearCart, RemoveFromCart } from '../redux/cartRedux';
+import { Add, Remove } from '@material-ui/icons';
 
 const Image = styled.img`
 width:200px;
@@ -44,6 +45,23 @@ display:flex;
 align-items:center;
 margin-bottom:20px;
 
+`
+const AmountContainer = styled.div`
+display:flex;
+align-items:center;
+font-weight:700;
+cursor:pointer;
+
+`
+const Amount = styled.span`
+width:30px;
+height:30px;
+border-radius:10px;
+border:1px solid teal;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0px 5px;
 `
 const ProductAmount = styled.div`
 font-size:24px;
@@ -237,6 +255,15 @@ const Navabar = () => {
   const [padding, setPadding] = useState("")
   const [margin, setMargin] = useState("")
   const [zdex, setzdex] = useState("")
+  const [quantity, setQuantity] = useState(1);
+  const handleQuantity = (type) => {
+    if(type === "dec"){
+        quantity > 1 && setQuantity(quantity-1);
+    }else{
+        setQuantity(quantity+1);
+    }
+
+};
   const cart = useSelector(state => state.cart)
  
     const dispatch = useDispatch();
@@ -246,7 +273,9 @@ const Navabar = () => {
         dispatch(ClearCart());
         
         };
-   
+   const handleRemoveFromCart = (product) => {
+    dispatch(RemoveFromCart(product));
+   };
 
   //logo scroll when active
   //const [navbarLogo, setNavbarLogo] = useState(logo)
@@ -353,7 +382,7 @@ const Navabar = () => {
            open={state}
            onClose={toggleDrawer(false)}
            >
-           <p>cool yo yoooooooooooooooo</p>
+        
           
            <TopButton onClick={handleClick} type="filled">Clear Cart</TopButton>
            {cart.products.map(product=>(
@@ -365,8 +394,15 @@ const Navabar = () => {
                           <ProductName><b>Product:</b>{product.title}</ProductName>
                           <ProductId>{product.id}</ProductId>
                           <ProductColor color={product.color}/>
-                          <ProductSize><b>Size:</b>{product.size}</ProductSize>
-                        
+                          <ProductPrice><Button onClick={()=>handleRemoveFromCart(product)}>Remove</Button></ProductPrice>
+                          <ProductSize>
+                          <AmountContainer>
+                         <Remove onClick={()=>handleQuantity("dec")}/>
+                         <Amount>{quantity}</Amount>
+                         <Add onClick={()=>handleQuantity("inc")}/>
+                         </AmountContainer>
+                          </ProductSize>
+
                       </Details>
                       
                   </ProductDetails>
@@ -376,7 +412,9 @@ const Navabar = () => {
                           <ProductAmount>{product.quantity}:<b>Item</b></ProductAmount>
                          
                       </ProductAmountContainer>
-                      <ProductPrice>£{product.price}</ProductPrice>
+
+                      <ProductPrice>£{product.price * product.quantity}</ProductPrice>
+                      
                   </PriceDetails>
               </Product>
               ))}

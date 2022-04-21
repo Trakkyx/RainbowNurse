@@ -1,4 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit"
+import { toast } from "react-toastify";
+import { Snackbar } from "@material-ui/core";
 const cartSlice = createSlice({
    name:"cart",
    initialState:{
@@ -9,9 +11,21 @@ const cartSlice = createSlice({
    },
    reducers:{
        addProduct:(state,action) =>{
-           state.quantity += 1;
-           state.products.push(action.payload);
-           state.total += action.payload.price * action.payload.quantity; 
+           const itemIndex = state.products.findIndex(
+            (item) => item._id === action.payload._id
+           );
+           if (itemIndex >= 0){
+             state.products[itemIndex].quantity +=action.payload.quantity;
+          
+           }else{
+             const tempProduct ={...action.payload, ...action.payload.quantity }
+             state.products.push(tempProduct);
+         
+             
+           }
+           //state.quantity += 1;
+           //state.products.push(action.payload);
+           //state.total += action.payload.price * action.payload.quantity; 
        },
        ClearCart:(state) =>{
         
@@ -20,9 +34,15 @@ const cartSlice = createSlice({
         state.total=0;
      
     },
+    RemoveFromCart:(state,action)=>{
+    const nextCartItems = state.products.filter(
+        (products) => products._id !== action.payload._id
+    );
+    state.products = nextCartItems;
+    },
    },
 });
 
-export const {addProduct, ClearCart} = cartSlice.actions;
+export const {addProduct, ClearCart, RemoveFromCart} = cartSlice.actions;
 export default cartSlice.reducer;
 

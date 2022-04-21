@@ -5,7 +5,6 @@ import {Provider} from "react-redux"
 import {store, persistor} from "./redux/store"
 import { PersistGate } from "redux-persist/es/integration/react"
 
-
 /*This is the main file where everything is rendered*/ 
 
 /*The provider brackets is for the redux toolkit so it can remember all the states*/ 
@@ -16,6 +15,7 @@ import { PersistGate } from "redux-persist/es/integration/react"
 
 ReactDOM.render(
   <Provider store={store}>
+    
     <PersistGate loading={null} persistor={persistor}> 
     <App />
     </PersistGate>
