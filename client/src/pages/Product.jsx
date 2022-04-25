@@ -197,11 +197,6 @@ const handleClose = (event, reason) => {
               <Price>Price: <b>£{product.price}</b></Price>
               <AddContainer>
 
-            <AmountContainer>
-               <Remove onClick={()=>handleQuantity("dec")}/>
-               <Amount>{quantity}</Amount>
-            <Add onClick={()=>handleQuantity("inc")}/>
-               </AmountContainer>
               <Button onClick={handleClick}>ADD TO CART</Button>
               <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
                      <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
