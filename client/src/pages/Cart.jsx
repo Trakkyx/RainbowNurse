@@ -162,7 +162,7 @@ font-size:30px:
 
 const Cart = () => {
     const cart = useSelector(state => state.cart)
-    const [stripeToke, setStripeToken] = useState(null);
+    const [stripeToken, setStripeToken] = useState(null);
     const onToken = (token) => {
     setStripeToken(token);
     };

@@ -4,7 +4,7 @@ import App from './App';
 import {Provider} from "react-redux"
 import {store, persistor} from "./redux/store"
 import { PersistGate } from "redux-persist/es/integration/react"
-
+import {getTotals} from "./redux/cartRedux"
 /*This is the main file where everything is rendered*/ 
 
 /*The provider brackets is for the redux toolkit so it can remember all the states*/ 
@@ -12,6 +12,9 @@ import { PersistGate } from "redux-persist/es/integration/react"
 /*The persistgate brackers is for the states to be remembered even when the browser tab has been closed*/ 
 
 /*App tag will render all the code in the app file*/ 
+
+
+store.dispatch(getTotals());
 
 ReactDOM.render(
   <Provider store={store}>

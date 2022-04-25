@@ -29,6 +29,7 @@ const Home = () => {
   <GoodQualities/>
   <GoodQualitiesBottom/>
   <NHSHOME/>
+  <Products/>
 
   <Footer/>
   </div>

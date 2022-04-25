@@ -2,12 +2,17 @@ import { ShoppingBasketOutlined, Search  } from '@material-ui/icons';
 import {logOut} from "../redux/userRedux"
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components"
-import { Badge, Button, Drawer, List, ListItem } from "@material-ui/core"
+import { Badge, Button, Drawer, List, ListItem} from "@material-ui/core"
+import Snackbar from '@mui/material/Snackbar';
 import { mobile } from "../responisive"
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ClearCart, RemoveFromCart } from '../redux/cartRedux';
+import { ClearCart, RemoveFromCart,increaseCart,decreaseCart,getTotals } from '../redux/cartRedux';
 import { Add, Remove } from '@material-ui/icons';
+import MuiAlert from '@mui/material/Alert';
+import StripeCheckout from 'react-stripe-checkout';
+
+const KEY = process.env.REACT_APP_STRIPE;
 
 const Image = styled.img`
 width:200px;
@@ -83,6 +88,19 @@ const TopButton = styled.button`
 padding:10px;
 font-weight:600;
 cursor:pointer;
+text-align:center;
+border: ${props=>props.type === "filled" && "none"};
+background-color: ${props=>props.type === "filled" ? "black" : "transparent"};
+color: ${props=>props.type === "filled" && "white"}; 
+`
+const CheckOutButton = styled.button`
+padding:10px;
+font-weight:600;
+cursor:pointer;
+width:100%;
+
+
+
 border: ${props=>props.type === "filled" && "none"};
 background-color: ${props=>props.type === "filled" ? "black" : "transparent"};
 color: ${props=>props.type === "filled" && "white"}; 
@@ -235,7 +253,18 @@ justify-content:space-between;
 `
 
 const Img = styled.img`
+
 width:100px;
+`
+
+
+const Summary= styled.div`
+flex:1;
+border: 0.5px solid lightgray;
+border-radius:10px;
+padding:10px;
+height:60vh;
+
 `
 const Scale = styled.div`
 transform:scale(1.5);
@@ -246,25 +275,52 @@ transform:scale(1.5);
 }
 
 `
+const SummaryText =styled.span``
+const SummaryItem =styled.div`
+margin:30px 0px;
+display:flex;
+justify-content:space-between;
+font-weight:${props=>props.type === "total" && "500"};
+font-size:${props=>props.type === "total" && "24px"};
+
+`
+const SummaryPrice =styled.span``
+const SummaryTitle =styled.h1`
+font-weight:200;
+font-size:30px:
+@media only screen and (max-width:732px){
+  
+
+    font-size:15px;
+    
+  }
+`
+
+
+
 
 const Navabar = () => {
   
   //navbar scroll when active state
+  
+    const Alert = React.forwardRef(function Alert(props, ref) {
+      return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    });
+  
+    
   const [navbar, setNavbar] = useState("")
   const [position, setPosition] = useState("")
   const [padding, setPadding] = useState("")
   const [margin, setMargin] = useState("")
   const [zdex, setzdex] = useState("")
   const [quantity, setQuantity] = useState(1);
-  const handleQuantity = (type) => {
-    if(type === "dec"){
-        quantity > 1 && setQuantity(quantity-1);
-    }else{
-        setQuantity(quantity+1);
-    }
-
-};
-  const cart = useSelector(state => state.cart)
+  const [open, setOpen] = useState(false);
+  const [stripeToken, setStripeToken] = useState(null);
+    const onToken = (token) => {
+    setStripeToken(token);
+    };
+  
+    const cart = useSelector(state => state.cart)
  
     const dispatch = useDispatch();
     const handleClick = (e) =>{
@@ -273,8 +329,18 @@ const Navabar = () => {
         dispatch(ClearCart());
         
         };
+        const IncreaseQuantity= (product) => {
+  
+         dispatch(increaseCart(product))
+        };
+        const DecreaseQuantity= (product) => {
+  
+          dispatch(decreaseCart(product))
+         };
    const handleRemoveFromCart = (product) => {
+    setOpen(true)
     dispatch(RemoveFromCart(product));
+   
    };
 
   //logo scroll when active
@@ -322,7 +388,10 @@ const Navabar = () => {
     // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground)
   })
+ // useEffect(()=>{
+ //  dispatch(getTotals());
 
+ // },[cart])
   //logo scroll function
  
   const [state,setState] = useState(false)
@@ -332,12 +401,14 @@ const Navabar = () => {
     setState(open)
   }
  
-  const list = () => {
-    <List>
-      <ListItem>Help hellllp</ListItem>
-    </List>
-    
-  }
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+  
+      return;
+     
+    }
+    setOpen(false);
+  };
   
   return(
     
@@ -372,7 +443,7 @@ const Navabar = () => {
            <MenuItem>
            
            <Button onClick={toggleDrawer(true)}>
-           <Badge badgeContent={0} color="primary"style={{ color: 'black', fontSize:"20px" }}>
+           <Badge badgeContent={cart.quantity} color="primary"style={{ color: 'black', fontSize:"20px" }}>
             <ShoppingBasketOutlined/>   
            </Badge>
            </Button>
@@ -395,11 +466,16 @@ const Navabar = () => {
                           <ProductId>{product.id}</ProductId>
                           <ProductColor color={product.color}/>
                           <ProductPrice><Button onClick={()=>handleRemoveFromCart(product)}>Remove</Button></ProductPrice>
+                          <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+                     <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                       Removed From Cart
+                    </Alert>
+                   </Snackbar>
                           <ProductSize>
                           <AmountContainer>
-                         <Remove onClick={()=>handleQuantity("dec")}/>
-                         <Amount>{quantity}</Amount>
-                         <Add onClick={()=>handleQuantity("inc")}/>
+                         <Remove onClick={()=>DecreaseQuantity(product)}/>
+                         <Amount>{product.quantity}</Amount>
+                         <Add onClick={()=>IncreaseQuantity(product)}/>
                          </AmountContainer>
                           </ProductSize>
 
@@ -416,8 +492,41 @@ const Navabar = () => {
                       <ProductPrice>£{product.price * product.quantity}</ProductPrice>
                       
                   </PriceDetails>
+                 
               </Product>
+              
+      
               ))}
+               <Summary>
+                <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+                <SummaryItem>
+                <SummaryText>Subtotal</SummaryText>
+                <SummaryPrice>£{cart.total}</SummaryPrice>
+                </SummaryItem>
+                <SummaryItem>
+                <SummaryText>Estimated Shipping</SummaryText>
+                <SummaryPrice>£5</SummaryPrice>
+                </SummaryItem>
+                <SummaryItem>
+                <SummaryText>Shipping Discount</SummaryText>
+                <SummaryPrice>£-5</SummaryPrice>
+                </SummaryItem>
+                <SummaryItem  type="total">
+                <SummaryText>Total</SummaryText>
+                <SummaryPrice>£{cart.total}</SummaryPrice>
+                </SummaryItem>
+                <StripeCheckout
+                name="Candles Shop"
+                billingAddress
+                shippingAddress
+                description={`Your total is £${cart.total}`}
+                amount={cart.total*100}
+                token={onToken} 
+                stripekey={KEY}
+                 >
+                 <CheckOutButton  type="filled">Check Out</CheckOutButton>
+                </StripeCheckout>
+            </Summary>
                </Drawer>
            
            </MenuItem>
