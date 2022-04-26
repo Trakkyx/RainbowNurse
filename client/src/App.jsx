@@ -14,6 +14,7 @@ import {
 import { useSelector } from "react-redux";
 import AboutUs from "./pages/AboutUs";
 import { ToastContainer } from "react-toastify"
+import NHS from "./pages/NHS";
 const App = () => {
   const user =useSelector(state=>state.user.currentUser);
   return (
@@ -32,8 +33,8 @@ const App = () => {
         <Route path="/AboutUs">
          <AboutUs/>
         </Route>
-         <Route path="/cart">
-         <Cart/>
+         <Route path="/nhs">
+         <NHS/>
          </Route>
           <Route path="/login">
             {user ? <Redirect to="/"/> : <Login/>}
