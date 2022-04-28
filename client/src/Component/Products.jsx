@@ -4,11 +4,23 @@ import Product from "./Product";
 import axios from "axios"
 
 const Container = styled.div`
+display: block;
+background-color:lightgrey;
+padding:5%;
+`
+const Contained = styled.div`
 display: flex;
 flex-wrap:wrap;
 justify-content:space-between;
-background-color:#282728;
+background-color:lightgrey;
 padding:20px;
+`
+
+const ShopTitle=styled.h1`
+text-align:center;
+align-items:center;
+justify-content:center:
+padding:5%;
 `
 
 const Products = ({cat,filters,sort}) => {
@@ -16,8 +28,8 @@ const Products = ({cat,filters,sort}) => {
     useEffect(() =>{
         const getProducts = async() =>{
           try{
-            const res = await axios.get(cat ? `http://localhost:5000/api/product?category=${cat}` 
-            : "http://localhost:5000/api/product"
+            const res = await axios.get( 
+            "http://localhost:5000/api/product"
             );
             setProducts(res.data);
           }catch(err){}
@@ -35,10 +47,13 @@ const Products = ({cat,filters,sort}) => {
               );
       } },[sort])
   return (
-
 <Container>
+<ShopTitle>Take A Look At The Dolls!</ShopTitle>
+<Contained>
+
  {products
      .map((item) => <Product item={item} key={item.id} />)}
+</Contained>
 </Container>
   )
   

@@ -418,7 +418,7 @@ const Navabar = () => {
        
        <Left>
         <Language>EN</Language>
-        <Link to="/AboutUs" style={{ textDecoration: 'none' }}>
+        <Link to="/nhs" style={{ textDecoration: 'none' }}>
            <MenuItem>NHS</MenuItem>
            </Link>
  
@@ -427,13 +427,14 @@ const Navabar = () => {
            </Link>
           
        </Left>
+       
        <Center><Logo><Img src="https://rainbownurses.com/wp-content/uploads/2022/02/Untitled.png"></Img></Logo></Center>
        <Right>
-            <Link to ="/products/candle" style={{ textDecoration: 'none' }} >
+            <Link to ="/nurses" style={{ textDecoration: 'none' }} >
            <SubMenuItem>Nurses</SubMenuItem>
            </Link>
            
-           <Link to ="/products/diffuser" style={{ textDecoration: 'none' }}>
+           <Link to ="/products" style={{ textDecoration: 'none' }}>
            <MenuItem>Shop</MenuItem>
            </Link>
          

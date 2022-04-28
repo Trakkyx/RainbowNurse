@@ -208,9 +208,9 @@ const handleClose = (event, reason) => {
             
           </InfoContainer>
       </Wrapper>
-      <Upsale/>
-      <Slider/>
-      <Newsletter/>
+   
+      
+
       <Footer/>
   </Container>
   )

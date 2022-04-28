@@ -21,7 +21,7 @@ transition:all 0.5s ease;
 `
 
 const Container = styled.div`
-background-color: #3D3A3F;
+background-color: lightblue;
 
 flex:1;
 margin:5px;
@@ -40,7 +40,7 @@ opacity:1;
 `
 const Image = styled.img`
 height:75%;
-background-color: #3D3A3F;
+background-color: lightblue;
 
 
 `
@@ -49,7 +49,7 @@ const Icon = styled.div`
 width:40px;
 height:40px;
 border-radius:50%;
-background-color: white;
+background-color:lightgrey;
 display: flex;
 align-items:center;
 justify-content:center;
@@ -67,8 +67,8 @@ const Price = styled.div`
 top:350px;
 position:absolute;
 font-size:15px;
-color:white;
-background-color:#282728;
+color:black;
+background-color:lightgrey;
 z-index:3;
 
 `
@@ -76,12 +76,12 @@ const Title = styled.div`
 bottom:0;
 position:absolute;
 font-size:15px;
-color:white;
-background-color:#282728;
+color:black;
+background-color:lightgrey;
 
 `
 const Contained=styled.div`
-background-color: #282728;
+background-color: lightgrey;
 flex:1;
 margin:5px;
 mid-width: 260px;
@@ -94,12 +94,17 @@ position:relative;
 
 
 `
+const ShopTitle=styled.h1`
+text-align:center;
+
+`
 
 
 
 const Product = ({item}) => {
   return(
     <Contained>
+     
     <Container>
       
      <Image src={item.img}/>
@@ -115,7 +120,7 @@ const Product = ({item}) => {
      
     
     </Container>
-    <Price><b>£{item.price}.00</b></Price>
+    <Price><b>£{item.price}</b></Price>
      <Title><b>{item.title}</b></Title>
     </Contained>
 

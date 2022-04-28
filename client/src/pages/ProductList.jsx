@@ -8,8 +8,8 @@ import Products from '../Component/Products';
 
 
 const Container = styled.div`
-background-color:#282728;
-color:white;
+background-color:lightgrey;
+color:black;
 `
 const Title = styled.h1`margin: 20px;`
 const FilterContainer = styled.div`
