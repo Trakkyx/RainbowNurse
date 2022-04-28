@@ -144,10 +144,7 @@ const Landing_image= () => {
     
   width="100%"
   height="100%"
-  
-  
-
-/>
+  />
      <Info>
            <Title>Explore with the Rainbow Nurses!</Title>
            <Button>SHOP HERE</Button>

@@ -9,6 +9,7 @@ import Footer from '../Component/Footer';
 import Upsale from '../Component/Upsale';
 import styled from "styled-components"
 import NHSDOLLS from '../Component/NHSDOLLS';
+import NURSEVIDEOS from '../Component/NURSEVIDEOS';
 
 
 const Info = styled.div`
@@ -24,15 +25,6 @@ font-size:18px;
 const Image = styled.img`
 
 
-display:flex;
-align-items:center;
-justify-content:center;
-margin:5%;
-text-align:center;
-width:500px;
-display: block;
-margin-left: auto;
-margin-right: auto;
 
 
 
@@ -45,13 +37,31 @@ color:darkblue;
 
 
 const Container = styled.div`
-
+display:block;
+padding:15%;
+padding-top:5%;
 
 `
 
+const Doll = styled.div`
+display:flex;
+padding:1%;
+`
 
+const Desc = styled.div`
+font-size:30px;
+padding:3%;
+`
 
-
+const DollEnd = styled.div`
+margin-left:auto;
+margin-right:auto;
+display:block;
+text-align:center;
+align-items:center;
+padding:4%;
+padding-bottom:1%;
+`
 
 
 
@@ -60,26 +70,43 @@ const NHS = () => {
   <div>
   <Annoncement/>
   <Navabar/>
+  <NURSEVIDEOS/>
    <Container>
-     
-     <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/a368f881e3b5e0b62d95192422f6c7d1-541x194x0x0x541x194x1648212911.png"/>
-     <Title>What is NHS Charities Together</Title>
-     <Info>Rainbow Nurses (TM) who support the incredible NHS Charities Together helps take pressure off an overstretched NHS, helping the NHS go further for everyone.<br/> They support incredible NHS staff and emergency volunteers so that they can continue with their vital life-saving work. They also fund projects that prevent ill health and improve services for patients.<br/> Their national reach through a network of NHS charities covering the UK means that they can ensure funds go quickly where they are needed most.
+     <Doll>
+       <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/5-545x545x0x11x545x523x1649073853.jpg"></Image>
+       <Desc> 
+Meet Hope:<br/><br/>
 
-As a membership organisation they also lead nationwide fundraising and advocacy campaigns, specialist advice and guidance, conferences and training or NHS charities – because they know that together we can help the NHS be the best it can be.<br/>
+Hope is the second hatched with Big Blue eyes, long blonde hair and fair skin. Hope is a very creative child, and incredibly dreamy and full of optimism.
+She is a little more naïve than her siblings but has much hope for the world and often calms her siblings down.
+(Hope is full of love, caring, and dreams represented by the Blue Heart radiating from her head)
+</Desc>
+     </Doll>
+     <Doll style={{flexDirection:"row-reverse"}}>
+     <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/Nala-animation-1-updated-1-545x545x0x0x545x545x1649070226.jpg"></Image>
+     <Desc>Meet Nala:<br/><br/>
+ 
+ Nala was the first who hatched from the cocoon, with her ebony skin, long braided hair, and dark brown eyes, she’s a fierce leader with huge strength, resilience, and decisiveness.
+ Nala is fiery and bright ,and represented by the Circle with Fire (Sun) on her head.
+ (Nala is headstrong, a little stubborn, makes brave decisions, and will try things again)</Desc>
+ </Doll>
+     <Doll>
+     <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/Sammie-animation-design-updated-1-572x572x14x0x545x572x1649070239.jpg"></Image>
+    
+     <Desc>Meet Sammie:<br/><br/>
+ 
+ Sammie is the youngest and a little bit reserved with short brown hair and deep green eyes. Sammie is the protector. They represent the Leaf Symbol shield and Sammie is full of empathy, a deep thinker, and can be reserved, but they are often the one that ultimately saves the day. Sammie is best referred to as they/them.</Desc>
+     </Doll>
+     <DollEnd>
+     <Desc>The Rainbow Nurses are full of surprises and possess many different powers which will be revealed throughout their stories and journeys….
 
-They believe the collective mission is more important than ever as the NHS faces the most challenging time in its history.<br/> They have been overwhelmed by the heartfelt support from across the nation to get behind the NHS during this critical time.<br/>
-
-A big thank you to you the amazing supporters – your help is making a huge difference to NHS staff, volunteers and patients, and is more important than ever.<br/></Info>
-<Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/4-562x562x0x25x562x511x1647866928.jpg"/>
-<Title>What Do NHS Charities Together Do?</Title>
-     <Info>People have been donating money to health services since well before the NHS was created. The 230+ member charities of NHS Charities Together are based in hospital, ambulance trusts, mental health trusts, community health trusts and health boards across the UK and they give over £1 million every day to the NHS so that people can stay well for longer and get better faster.<br/>
-
-Most of them focus on helping our health services to do more. From supporting research and development, to brightening up hospital environments, to donating state-of-the-art technologies and equipment, the charities raise funds and mobilise volunteers, touching lives and making a huge difference to millions of people when they are at their most vulnerable.<br/>
-
-During the Covid-19 pandemic this focus has shifted to supporting immediate practical and emotional needs of staff and patients and helping to take pressure off an overstretched health service.<br/> The aim of NHS Charities Together and the wider NHS charity network is to provide extra care and support for NHS staff and patients, enabling health services to do more, beyond the core services that would ordinarily be funded by government. This helps improve the wellbeing of patients and saves lives.<br/> With current relentless pressures on the NHS the extra support provided by NHS charities is more important than ever.</Info>
+The three Rainbow Nurses are ‘STRONGEST TOGETHER’ and they know that always
+‘Love will save the day’.</Desc>
+<Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-32-866x487x111x0x644x487x1648632421.jpg"/>
+</DollEnd>
+ 
    </Container>
-   <NHSDOLLS/>
+   
   <Footer/>
   </div>
   );
