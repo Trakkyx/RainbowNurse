@@ -185,7 +185,6 @@ text-align:center;
 
 const Logo = styled.h1`
 font-weight:bold;
-transform:scale(1.6);
 padding:1%;
 font-size:20px;
 margin-left: 25px;
@@ -195,7 +194,7 @@ transition:all 0.5s ease;
 cursor:pointer;
 &:hover {
     color:#DAA520;
-    transform: scale(1.8);
+    transform: scale(1.4);
 }
 @media only screen and (max-width:800px){
   
@@ -236,7 +235,7 @@ color:black;
 transition:all 0.5s ease;
 cursor:pointer;
 &:hover {
-    color:#DAA520;
+    color:lightblue;
     transform: scale(1.1);
 }
 @media only screen and (max-width:1400px){
@@ -254,7 +253,7 @@ justify-content:space-between;
 
 const Img = styled.img`
 
-width:100px;
+width:30%;
 `
 
 
@@ -418,24 +417,24 @@ const Navabar = () => {
        
        <Left>
         <Language>EN</Language>
-        <Link to="/nhs" style={{ textDecoration: 'none' }}>
-           <MenuItem>NHS</MenuItem>
+        <Link to="/nurses" style={{ textDecoration: 'none' }}>
+           <SubMenuItem>NHS</SubMenuItem>
            </Link>
  
            <Link to="/AboutUs" style={{ textDecoration: 'none' }}>
-           <MenuItem>About Us</MenuItem>
+           <SubMenuItem>About Us</SubMenuItem>
            </Link>
           
        </Left>
        
-       <Center><Logo><Img src="https://rainbownurses.com/wp-content/uploads/2022/02/Untitled.png"></Img></Logo></Center>
+       <Center><Logo>  <Link to="/" style={{ textDecoration: 'none' }}><Img src="https://rainbownurses.com/wp-content/uploads/2022/02/Untitled.png"></Img> </Link></Logo></Center>
        <Right>
-            <Link to ="/nurses" style={{ textDecoration: 'none' }} >
+            <Link to ="/nhs" style={{ textDecoration: 'none' }} >
            <SubMenuItem>Nurses</SubMenuItem>
            </Link>
            
-           <Link to ="/products" style={{ textDecoration: 'none' }}>
-           <MenuItem>Shop</MenuItem>
+           <Link to ="/products/doll" style={{ textDecoration: 'none' }}>
+           <SubMenuItem>Shop</SubMenuItem>
            </Link>
          
             

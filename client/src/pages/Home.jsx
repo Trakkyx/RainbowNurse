@@ -26,10 +26,11 @@ const Home = () => {
   
   <Navabar/>
   <Landing_image/>
+  <Products/>
   <GoodQualities/>
   <GoodQualitiesBottom/>
   <NHSHOME/>
-  <Products/>
+ 
 
   <Footer/>
   </div>
