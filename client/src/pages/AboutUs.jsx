@@ -44,6 +44,15 @@ display:flex;
 
 
 `
+
+const BackgroundImage = styled.img`
+position:fixed;
+width:3000px;
+align-items:center;
+justify-content:center;
+margin-bottom:500px;
+
+`
 const NHSImage = styled.img`
 
 align-items:center;
@@ -76,6 +85,15 @@ text-align:center;
 const Container = styled.div`
 padding:20%;
 padding-top:10%;
+padding-bottom:120px;
+background-image: url("https://i.ibb.co/Yhbt76P/Logo-500x500-px-removebg-preview.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center center;
+background-size: cover;
+z-index:2;
+
+
 
 `
 const Contained = styled.div`
@@ -110,15 +128,20 @@ display:flex;
 const NHSContained = styled.div`
 justify-content:center;
 align-items:center;
-text-align:center;
+
+`
+const ButtonContainer = styled.div`
+padding:50px;
+padding-top:5px;
+padding-bottom:5px;
 `
 const Button= styled.button`
 border:none;
-text-align:center;
+
 width:170px;  
 padding:20px;
-justify-content:center;
-align-items:center;
+
+
 padding-left:30px;
 padding-right:30px;
 border-radius: 15px;
@@ -143,6 +166,7 @@ const AboutUs = () => {
   <div>
   <Annoncement/>
   <Navabar/>
+ 
    <Container>
      <About>
      <Title>Some Things About Us</Title>
@@ -179,7 +203,9 @@ Rainbow Nurses ™ was created by Dean Jacobs whilst locked down in England, in 
         <NHSContained>
         <SubTitle>Our NHS Charities Together Partnership</SubTitle>
         <NHSInfo>We chose to partner up with the NHS Charities Together to help out with the current situation going on in the world. You may know how overworked nurses and doctors are currently and this is where we come in educating children for the future whilst also donating to the NHS Charities Together for the much needed boost they need. </NHSInfo>
+        <ButtonContainer>
         <Button>Find Out More</Button>
+        </ButtonContainer>
         </NHSContained>
         <NHSContained>
         <NHSImage src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/a368f881e3b5e0b62d95192422f6c7d1-456x164x0x1x456x162x1648212911.png"/>

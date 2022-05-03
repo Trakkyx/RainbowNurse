@@ -10,7 +10,7 @@ background-color:lightblue;
 padding:50px;
 margin:0px;
 
-margin-bottom:10%;
+margin-bottom:120px;
 margin-left:300px;
 margin-right:300px;
 `

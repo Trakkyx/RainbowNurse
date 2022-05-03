@@ -10,6 +10,7 @@ import Products from '../Component/Products';
 const Container = styled.div`
 background-color:lightgrey;
 color:black;
+padding-top:120px;
 `
 const Title = styled.h1`margin: 20px;`
 const FilterContainer = styled.div`
@@ -40,8 +41,6 @@ const ProductList = () => {
 
     <Container>
       <Navabar/>
-      <Annoncement/>
-      <Title>{cat}</Title>
       <FilterContainer>
         <Filter>
            <FilterText>Sort Products:</FilterText>

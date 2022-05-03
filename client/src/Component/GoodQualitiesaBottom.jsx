@@ -8,7 +8,7 @@ background-color:lightgrey;
 padding:0px;
 margin:0px;
 padding-top:10px;
-padding-bottom:10%;
+padding-bottom:10px;
 padding-left:150px;
 padding-right:150px;
 @media only screen and (max-width:600px){

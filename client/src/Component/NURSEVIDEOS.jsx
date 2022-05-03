@@ -10,7 +10,7 @@ background-color:white;
 padding:0px;
 margin:0px;
 padding-top:10%;
-padding-bottom:10%;
+padding-bottom:0px;
 padding-left:300px;
 padding-right:300px;
 `
@@ -61,14 +61,16 @@ const Icon = styled.div`
  width:600px;
 `
 const Image = styled.img`
-
+display: fixed;
+z-index:0;
+width:100%;
 
 `
 
 const NURSEVIDEOS= () => {
   return (
    <Container>
-    
+     
      <Title>Hear what the rainbow nurses have to say</Title>
      <Wrapper>
        <Quality>
@@ -92,7 +94,7 @@ const NURSEVIDEOS= () => {
          <Desc><b>Watch How The Rainbow Nurses Were Born!</b></Desc>
           <Icon>
           <ReactPlayer
-  url="https://www.youtube.com/watch?v=o--dP8Um1IE"
+  url="https://www.youtube.com/watch?v=lO5DpP2TdE0"
      playing={false} 
     loop={true} 
     controls={true}

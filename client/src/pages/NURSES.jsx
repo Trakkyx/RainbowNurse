@@ -15,8 +15,8 @@ import NURSEVIDEOS from '../Component/NURSEVIDEOS';
 const Info = styled.div`
 text-align:center;
 padding:20%;
-padding-top:50px;
-padding-bottom:50px;
+padding-top:40px;
+padding-bottom:10px;
 font-size:18px;
 `
 
@@ -28,7 +28,7 @@ const Image = styled.img`
 display:flex;
 align-items:center;
 justify-content:center;
-margin:5%;
+margin:30px;
 text-align:center;
 width:500px;
 display: block;
@@ -47,7 +47,7 @@ color:darkblue;
 
 const Container = styled.div`
 
-
+padding-top:120px;
 `
 
 

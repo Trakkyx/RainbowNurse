@@ -39,13 +39,15 @@ color:darkblue;
 const Container = styled.div`
 display:block;
 padding:15%;
-padding-top:5%;
+padding-top:10px;
+padding-bottom:5%;
 
 `
 
 const Doll = styled.div`
 display:flex;
 padding:1%;
+padding-top:120px;
 `
 
 const Desc = styled.div`
