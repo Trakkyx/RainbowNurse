@@ -16,10 +16,18 @@ import Products from '../Component/Products';
 import Slider from '../Component/Slider';
 import { IconButton, Snackbar} from '@material-ui/core';
 import MuiAlert from '@mui/material/Alert';
+import { Swiper, SwiperSlide } from "swiper/react/swiper-react"
+import { FreeMode, Navigation, Thumbs } from "swiper";
+import Carousel from 'react-elastic-carousel';
+
+
+
+
 
 const Container = styled.div``
 const Wrapper = styled.div`
 padding:50px;
+padding-top:100px;
 display:flex;
 @media only screen and (max-width:1000px){
     
@@ -28,6 +36,7 @@ display:flex;
 `
 const ImgContainer = styled.div`
 flex:1;
+display:flex:
 
 `
 const InfoContainer = styled.div`
@@ -57,6 +66,8 @@ object-fit:contain;
 const Desc = styled.p`
 margin:20px 0px;
 padding:30px;
+padding-bottom:10px;
+padding-top:10px;
 
 `
 const Title = styled.h1`
@@ -84,7 +95,9 @@ const FilterTitle = styled.span`
 font-size:20px;
 font-weight:200;
 `
-
+const ButtonContainer = styled.div`
+padding:30px;
+`
 const FilterSizeOption = styled.option``
 const AddContainer = styled.div`
 display:flex;
@@ -144,17 +157,25 @@ const Product = () => {
 const location = useLocation();
 const id = location.pathname.split("/")[2]; 
 const [product, setProduct] = useState({});
+const [productImage, setProductImage] = useState([]);
 const [quantity, setQuantity] = useState(1);
 const [open, setOpen] = useState(false);
+const [loading, setLoading] = useState(false);
+const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
 const dispatch = useDispatch();
 useEffect(()=>{
+ 
 const getProduct = async ()=>{
 try{
    const res = await publicRequest.get("/product/find/"+id)
    setProduct(res.data);
+ 
 }catch{}
+
 };
+
+
 getProduct();    
 },[id]);
 
@@ -183,6 +204,19 @@ const handleClose = (event, reason) => {
   }
   setOpen(false);
 };
+console.log(product)
+let hopedesc=""
+if (product._id == '626a85c7b86e70acc39ff46f') {
+console.log("help")
+hopedesc=<ul><li>Rainbow Nurses Hope 18″ Doll, Blonde Hair, Blue Eyes</li>
+<li>Hope’s outfit features the Rainbow Nurses uniform, that transforms from a Nurse to a Superhero!</li>
+<li>Sparkling eyes will open and close depending on if this doll is upright or laid down</li>
+<li>Shining, rooted hair that can be brushed and styled</li>
+<li>Accessories include PPE mask, Rainbow Nurse belt & Headband</li>
+<li>Soft Bodied Doll that’s safe around children</li>
+<li>SKU:HOPE18INCHDOL</li></ul>
+ 
+}
 
   return (
   <Container>
@@ -190,21 +224,32 @@ const handleClose = (event, reason) => {
       <Annoncement/>
       <Wrapper>
           <ImgContainer>
-          <Image src={product.img}/>
+          
+          
+      <Carousel>
+      <Image src={product.img1}/>
+      <Image src={product.img2}/>
+      <Image src={product.img3}/>
+      
+      </Carousel>
           </ImgContainer>
           <InfoContainer>
               <Title>{product.title}</Title>
               <Price>Price: <b>£{product.price}</b></Price>
               <AddContainer>
-
+               <ButtonContainer>
               <Button onClick={handleClick}>ADD TO CART</Button>
+              </ButtonContainer>
               <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
                      <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                        Added To Cart
                     </Alert>
                    </Snackbar>
             </AddContainer>
+        
+            <DescSpec>{hopedesc}</Desc>
               <Desc>{product.desc}</Desc>
+                
             
           </InfoContainer>
       </Wrapper>
