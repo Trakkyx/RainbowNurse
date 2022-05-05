@@ -102,12 +102,13 @@ text-align:center;
 
 
 const Product = ({item}) => {
+  
   return(
     <Contained>
-     
+    
     <Container>
       
-     <Image src={item.img}/>
+     <Image src={item.size}/>
      <Info>
          <Icon>
              <Link to={`/product/${item._id}`}>

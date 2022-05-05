@@ -247,7 +247,7 @@ hopedesc=<ul><li>Rainbow Nurses Hope 18″ Doll, Blonde Hair, Blue Eyes</li>
                    </Snackbar>
             </AddContainer>
         
-            <DescSpec>{hopedesc}</Desc>
+            <Desc>{hopedesc}</Desc>
               <Desc>{product.desc}</Desc>
                 
             
