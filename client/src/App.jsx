@@ -16,6 +16,8 @@ import AboutUs from "./pages/AboutUs";
 import { ToastContainer } from "react-toastify"
 import NHS from "./pages/NHS";
 import NURSES from "./pages/NURSES";
+import Contact from "./Component/Contact";
+import ContactUs from "./pages/ContactUs";
 const App = () => {
   const user =useSelector(state=>state.user.currentUser);
   return (
@@ -43,6 +45,9 @@ const App = () => {
           </Route>
           <Route path="/nurses">
           <NURSES/>
+          </Route>
+          <Route path="/contactus">
+          <ContactUs/>
           </Route>
       </Switch>
     </Router>
