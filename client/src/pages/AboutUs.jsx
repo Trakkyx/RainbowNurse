@@ -17,7 +17,29 @@ const Info = styled.div`
 text-align:left;
 padding:50px;
 color:Black;
-font-size:25px;
+font-size:20px;
+@media only screen and (max-width:1600px){
+  
+  font-size:18px;
+ 
+}
+@media only screen and (max-width:1300px){
+  
+  font-size:15px;
+  
+}
+@media only screen and (max-width:1100px){
+  
+  font-size:12px;
+  
+}
+@media only screen and (max-width:930px){
+  
+  text-align:center;
+  
+}
+
+
 
 `
 const NHSInfo = styled.div`
@@ -25,6 +47,10 @@ text-align:left;
 padding:50px;
 color:Black;
 font-size:20px;
+@media only screen and (max-width:1600px){
+ 
+  font-size:15px;
+}
 
 `
 const Points = styled.div`
@@ -33,6 +59,19 @@ padding:50px;
 color:Black;
 font-size:20px;
 line-height:0.1;
+@media only screen and (max-width:1440px){
+ 
+  font-size:17px;
+}
+@media only screen and (max-width:1270px){
+ 
+  font-size:15px;
+}
+@media only screen and (max-width:930px){
+ 
+  font-size:14px;
+  line-height:1;
+}
 `
 
 
@@ -41,6 +80,20 @@ const Image = styled.img`
 align-items:center;
 justify-content:center;
 display:flex;
+@media only screen and (max-width:1600px){
+ 
+  width:70%;
+}
+@media only screen and (max-width:930px){
+ 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+@media only screen and (max-width:1430px){
+   width:60%;
+}
 
 
 `
@@ -60,9 +113,21 @@ justify-content:center;
 display:flex;
 width:500px;
 padding-top:100px;
+@media only screen and (max-width:1400px){
+  width:400px;
+ 
+
+
+}
+
+@media only screen and (max-width:900px){
+  width:300px;
+ 
 
 
 `
+
+
 const Title= styled.h1`
 text-align:center;
 padding:5%;
@@ -86,12 +151,6 @@ const Container = styled.div`
 padding:20%;
 padding-top:10%;
 padding-bottom:120px;
-background-image: url("https://i.ibb.co/Yhbt76P/Logo-500x500-px-removebg-preview.png");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-position: center center;
-background-size: cover;
-z-index:2;
 
 
 
@@ -100,6 +159,14 @@ const Contained = styled.div`
 display:flex;
 align-items:center;
 justify-content:left;
+@media only screen and (max-width:930px){
+  
+  display:block;
+  align-items:center;
+justify-content:center;
+
+  
+}
 
 
 `
@@ -110,8 +177,18 @@ justify-content:left;
 text-align:left;
 background-color:#fff5d0;
 padding:0px;
-padding-left:20%;
-padding-right:20%;
+padding-left:15%;
+padding-right:15%;
+@media only screen and (max-width:1700px){
+  padding-left:10%;
+  padding-right:10%; 
+  
+}
+@media only screen and (max-width:1170px){
+ padding:0px;
+ 
+}
+
 
 `
 
@@ -124,10 +201,21 @@ padding-bottom:10%;
 const NHSSECTION = styled.div`
 padding-top:10%;
 display:flex;
+flex-direction: row-reverse;
+
+@media only screen and (max-width:1300px){
+  display:block;
+ 
+}
 `
 const NHSContained = styled.div`
 justify-content:center;
 align-items:center;
+padding:20px;
+@media only screen and (max-width:700px){
+  padding:5px;
+ 
+}
 
 `
 const ButtonContainer = styled.div`
@@ -199,7 +287,9 @@ Rainbow Nurses ™ was created by Dean Jacobs whilst locked down in England, in 
      <Points>A team that is willing to go above and beyond for our customers</Points>
      </PointsContained>
       <NHSSECTION>
-        
+      <NHSContained>
+        <NHSImage src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/a368f881e3b5e0b62d95192422f6c7d1-456x164x0x1x456x162x1648212911.png"/>
+        </NHSContained>
         <NHSContained>
         <SubTitle>Our NHS Charities Together Partnership</SubTitle>
         <NHSInfo>We chose to partner up with the NHS Charities Together to help out with the current situation going on in the world. You may know how overworked nurses and doctors are currently and this is where we come in educating children for the future whilst also donating to the NHS Charities Together for the much needed boost they need. </NHSInfo>
@@ -207,9 +297,7 @@ Rainbow Nurses ™ was created by Dean Jacobs whilst locked down in England, in 
         <Button>Find Out More</Button>
         </ButtonContainer>
         </NHSContained>
-        <NHSContained>
-        <NHSImage src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/a368f881e3b5e0b62d95192422f6c7d1-456x164x0x1x456x162x1648212911.png"/>
-        </NHSContained>
+       
       
       </NHSSECTION>
      </Container>

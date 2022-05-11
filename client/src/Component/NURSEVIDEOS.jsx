@@ -11,8 +11,33 @@ padding:0px;
 margin:0px;
 padding-top:10%;
 padding-bottom:0px;
-padding-left:300px;
+padding-left:400px;
+padding-right:400px;
+@media only screen and (max-width:1750px){
+
+  padding-left:300px;
 padding-right:300px;
+}
+@media only screen and (max-width:1550px){
+
+  padding-left:250px;
+padding-right:250px;
+}
+@media only screen and (max-width:990px){
+
+  padding-left:200px;
+padding-right:200px;
+}
+@media only screen and (max-width:830px){
+
+  padding-left:100px;
+padding-right:100px;
+}
+@media only screen and (max-width:630px){
+
+  padding-left:50px;
+padding-right:50px;
+}
 `
 const Title = styled.h1`
 text-align:center;
@@ -37,7 +62,7 @@ display:flex;
 justify-content:space-between;
 justify:content:center;
 align-items:center;
-@media only screen and (max-width:500px){
+@media only screen and (max-width:1500px){
   display:block;
 }
 
@@ -58,7 +83,7 @@ const Icon = styled.div`
  display: block;
  margin-left: auto;
  margin-right: auto;
- width:600px;
+ width:400px;
 `
 const Image = styled.img`
 display: fixed;
@@ -71,7 +96,7 @@ const NURSEVIDEOS= () => {
   return (
    <Container>
      
-     <Title>Hear what the rainbow nurses have to say</Title>
+     <Title>Check Out These Videos!</Title>
      <Wrapper>
        <Quality>
        <Desc><b>Watch the Rainbow Nurses Great Theme Song!</b></Desc>
@@ -84,7 +109,7 @@ const NURSEVIDEOS= () => {
     
     
   width="100%"
-  height="350px"
+  height="250px"
   
   />
          </Icon>
@@ -101,7 +126,7 @@ const NURSEVIDEOS= () => {
     
     
   width="100%"
-  height="350px"
+  height="250px"
   
   />
          </Icon>

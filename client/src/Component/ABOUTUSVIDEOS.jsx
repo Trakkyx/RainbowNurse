@@ -13,6 +13,22 @@ margin:0px;
 margin-bottom:120px;
 margin-left:300px;
 margin-right:300px;
+@media only screen and (max-width:1340px){
+  margin-left:200px;
+margin-right:200px;
+ 
+}
+@media only screen and (max-width:1130px){
+  margin-left:100px;
+margin-right:100px;
+ 
+}
+@media only screen and (max-width:920px){
+margin:0px;
+}
+@media only screen and (max-width:730px){
+padding:0px;
+  }
 `
 const Title = styled.h1`
 text-align:center;
@@ -45,6 +61,10 @@ align-items:center;
 `
 const Quality = styled.div`
 padding:3%;
+@media only screen and (max-width:920px){
+  padding:0px;
+  }
+
 
 `
 const Desc = styled.p`
@@ -59,6 +79,9 @@ const Icon = styled.div`
  margin-left: auto;
  margin-right: auto;
  width:600px;
+ @media only screen and (max-width:600px){
+  width:100%;
+  }
  justify-content:center;
 align-items:center;
 text-align:center;
@@ -108,7 +131,7 @@ const ABOUTUSVIDEOS= () => {
     
     
   width="100%"
-  height="350px"
+  height="400px"
   
   />
   <ButtonDiv>

@@ -5,6 +5,15 @@ import Footer from '../Component/Footer';
 import Navabar from '../Component/Navabar';
 
 const Container = styled.div`
+background-image: url("https://i.ibb.co/RbrNhHm/space.png");
+background-color: #cccccc; 
+height: 100%; 
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+
+`
+const Contained = styled.div`
 
 
 `
@@ -22,7 +31,13 @@ display:block;
 font-size:25px;
 `
 const SubDetails=styled.div`
-padding:50px;
+padding:20px;
+padding-left:40px;
+`
+const SubTitle = styled.div`
+padding:20px;
+padding-left:40px;
+color:darkblue;
 `
 const ContactFourm = styled.div`
 display:block;
@@ -31,10 +46,16 @@ const ContactusTitle = styled.h1`
 
 padding-top:200px;
 text-align:center; color:lightblue;`
+
+const SubContainer = styled.div`
+display:flex;
+`
 const ContactUs = () => {
   return (
     <Container>
+      <Contained>
     <Navabar/>
+    
     <ContactusTitle>Get in Touch</ContactusTitle>
     <ContactContainer>
         
@@ -42,21 +63,30 @@ const ContactUs = () => {
     <Contact/>
     </ContactFourm>
     <ContactDetails>
-  <SubDetails><b>ADDRESS:</b><br/>
+    <SubContainer>
+      <SubTitle><b>ADDRESS:</b> </SubTitle>
+  <SubDetails>
 
 15A Solopark, Station Road, Pampisford, Cambridge.
 
 Cb22 3HB</SubDetails>
-  <SubDetails><b>OPENING HOURS:</b>
+</SubContainer>
+<SubContainer>
+      <SubTitle><b>OPENING HOURS:</b> </SubTitle>
+  <SubDetails>8 AM to 9 PM</SubDetails>
+</SubContainer>
+<SubContainer>
+      <SubTitle><b>PHONE NUMBERS:</b> </SubTitle>
+  <SubDetails>
+  07776 189458</SubDetails>
+</SubContainer>
 
-8 AM to 9 PM</SubDetails>
-  <SubDetails><b>PHONE NUMBERS:</b>
 
-07776 189458</SubDetails>
     </ContactDetails>
     </ContactContainer>
  
      <Footer/>
+     </Contained>
     </Container>
   )
 }

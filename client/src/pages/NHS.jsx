@@ -18,17 +18,27 @@ padding:20%;
 padding-top:50px;
 padding-bottom:50px;
 font-size:18px;
+
 `
 
 
 
 const Image = styled.img`
+@media only screen and (max-width:1350px){
 
+ width:300px;
+}
+@media only screen and (max-width:900px){
 
+  width:200px;
+ }
 
 
 
 `
+
+
+
 const Title= styled.h1`
 text-align:center;
 padding-top:3%;
@@ -41,6 +51,12 @@ display:block;
 padding:15%;
 padding-top:10px;
 padding-bottom:5%;
+@media only screen and (max-width:900px){
+
+  padding:0px;
+  padding-top:10px;
+  padding-bottom:10px;
+ }
 
 `
 
@@ -48,11 +64,38 @@ const Doll = styled.div`
 display:flex;
 padding:1%;
 padding-top:120px;
+@media only screen and (max-width:1200px){
+
+  font-size:20px;
+
+ }
+ @media only screen and (max-width:900px){
+
+  display:block;
+  text-align:center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+ }
 `
 
 const Desc = styled.div`
 font-size:30px;
 padding:3%;
+@media only screen and (max-width:1500px){
+
+ font-size:25px;
+}
+@media only screen and (max-width:1200px){
+
+  font-size:20px;
+ }
+ @media only screen and (max-width:1000px){
+
+  font-size:18px;
+ }
 `
 
 const DollEnd = styled.div`
@@ -64,7 +107,14 @@ align-items:center;
 padding:4%;
 padding-bottom:1%;
 `
+const ENDImage = styled.img`
 
+ @media only screen and (max-width:900px){
+ 
+   width:300px;
+  }
+ 
+`
 
 
 const NHS = () => {
@@ -75,7 +125,7 @@ const NHS = () => {
   <NURSEVIDEOS/>
    <Container>
      <Doll>
-       <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/5-545x545x0x11x545x523x1649073853.jpg"></Image>
+       <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/5-545x545x0x11x545x523x1649073853.jpg"/>
        <Desc> 
 Meet Hope:<br/><br/>
 
@@ -85,7 +135,7 @@ She is a little more naïve than her siblings but has much hope for the world an
 </Desc>
      </Doll>
      <Doll style={{flexDirection:"row-reverse"}}>
-     <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/Nala-animation-1-updated-1-545x545x0x0x545x545x1649070226.jpg"></Image>
+     <Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/Nala-animation-1-updated-1-545x545x0x0x545x545x1649070226.jpg"/>
      <Desc>Meet Nala:<br/><br/>
  
  Nala was the first who hatched from the cocoon, with her ebony skin, long braided hair, and dark brown eyes, she’s a fierce leader with huge strength, resilience, and decisiveness.
@@ -104,7 +154,7 @@ She is a little more naïve than her siblings but has much hope for the world an
 
 The three Rainbow Nurses are ‘STRONGEST TOGETHER’ and they know that always
 ‘Love will save the day’.</Desc>
-<Image src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-32-866x487x111x0x644x487x1648632421.jpg"/>
+<ENDImage src="https://rainbownurses.com/wp-content/uploads/brizy/imgs/frame-32-866x487x111x0x644x487x1648632421.jpg"/>
 </DollEnd>
  
    </Container>

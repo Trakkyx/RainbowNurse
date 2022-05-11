@@ -31,11 +31,11 @@ const Contact = () => {
   return (
     <StyledContactForm>
       <form ref={form} onSubmit={sendEmail}>
-        <label>FullName</label>
+        <label><b>Full Name</b></label>
         <input type="text" name="user_name" />
-        <label>Your Email</label>
+        <label><b>Your Email</b></label>
         <input type="email" name="user_email" />
-        <label>Message</label>
+        <label><b>Message</b></label>
         <textarea name="message" />
         <input type="submit" value="Send" />
       </form>

@@ -18,6 +18,9 @@ padding:20%;
 padding-top:40px;
 padding-bottom:10px;
 font-size:18px;
+@media only screen and (max-width:800px){
+ font-size:14px;
+  }
 `
 
 
@@ -34,6 +37,9 @@ width:500px;
 display: block;
 margin-left: auto;
 margin-right: auto;
+@media only screen and (max-width:700px){
+  width:300px;
+  }
 
 
 

@@ -11,6 +11,22 @@ padding-top:100px;
 padding-bottom:10px;
 padding-left:300px;
 padding-right:300px;
+@media only screen and (max-width:1600px){
+  padding-left:200px;
+padding-right:200px;
+  }
+  @media only screen and (max-width:1300px){
+    padding-left:100px;
+  padding-right:100px;
+    }
+    @media only screen and (max-width:1070px){
+      padding-left:50px;
+    padding-right:50px;
+      }
+      @media only screen and (max-width:900px){
+        padding-left:20px;
+      padding-right:20px;
+        }
 `
 const Title = styled.h1`
 text-align:center;
@@ -35,7 +51,7 @@ display:flex;
 justify-content:space-between;
 justify:content:center;
 align-items:center;
-@media only screen and (max-width:500px){
+@media only screen and (max-width:900px){
   display:block;
 }
 
