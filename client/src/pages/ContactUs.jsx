@@ -18,13 +18,66 @@ const Contained = styled.div`
 
 `
 const ContactContainer=styled.div`
-padding:500px;
+padding:400px;
 padding-top:5%;
 padding-bottom:10%;
 align-items:center;
 text-align:center;
 margin:auto;
 display:flex;
+@media only screen and (max-width:1700px){
+
+  padding:350px;
+ }
+ @media only screen and (max-width:1620px){
+
+  padding:300px;
+ }
+ @media only screen and (max-width:1500px){
+
+  padding:250px;
+ }
+ @media only screen and (max-width:1400px){
+
+  padding:200px;
+ }
+ @media only screen and (max-width:1300px){
+
+  padding:150px;
+ }
+ @media only screen and (max-width:1200px){
+
+  padding:100px;
+ }
+ @media only screen and (max-width:1100px){
+
+  padding:50px;
+ }
+ @media only screen and (max-width:1000px){
+
+  padding:0px;
+  padding-top:50px;
+  padding-bottom:50px;
+ }
+ @media only screen and (max-width:900px){
+ display:block;
+ align-items:center;
+ padding:20%;
+ padding-top:50px;
+ padding-bottom:50px;
+ }
+ @media only screen and (max-width:600px){
+  display:block;
+  align-items:center;
+  padding:9%;
+  padding-top:50px;
+  padding-bottom:50px;
+  }
+
+
+
+
+
 `
 const ContactDetails=styled.h1`
 display:block;

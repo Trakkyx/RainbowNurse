@@ -55,8 +55,8 @@ position:relative;
 const Info= styled.div`
 margin-left:3%;
 position: relative;
-width:100%;
-height:100%;
+width:80%;
+height:80%;
 bottom:600px;
 @media only screen and (max-width:1300px){
 

@@ -16,11 +16,16 @@ const KEY = process.env.REACT_APP_STRIPE;
 
 const Image = styled.img`
 width:200px;
-@media only screen and (max-width:732px){
+@media only screen and (max-width:800px){
   
-    width:100px;
+    width:10px;
     
   }
+  @media only screen and (max-width:1400px){
+
+    width:150px;
+  }
+
 `
 const Details = styled.div`
 padding: 15px;
@@ -179,7 +184,7 @@ align-items:center;
 justify-content:space-between;
 `
 const Center = styled.div`
-flex:1;
+flex:0.5;
 text-align:center;
 `
 
@@ -187,7 +192,8 @@ const Logo = styled.h1`
 font-weight:bold;
 padding:1%;
 font-size:20px;
-margin-left: 25px;
+margin-left: 70px;
+margin-right: 70px;
 font-weight:600;
 color:black;
 transition:all 0.5s ease;
@@ -205,7 +211,11 @@ cursor:pointer;
 }
     
   }
+  @media only screen and (max-width:600px){
 
+    margin-left: 20px;
+margin-right: 20px;
+  }
 
 
 `
@@ -240,6 +250,30 @@ cursor:pointer;
 }
 @media only screen and (max-width:1400px){
 
+  font-size:15px;
+}
+@media only screen and (max-width:1400px){
+
+  font-size:13px;
+}
+`
+const SubbedMenuItem = styled.div`
+font-size:20px;
+margin-left: 25px;
+font-weight:600;
+color:black;
+transition:all 0.5s ease;
+cursor:pointer;
+&:hover {
+    color:lightblue;
+    transform: scale(1.1);
+}
+@media only screen and (max-width:1400px){
+
+  font-size:15px;
+}
+@media only screen and (max-width:800px){
+
   display:none;
 }
 `
@@ -253,7 +287,15 @@ justify-content:space-between;
 
 const Img = styled.img`
 
-width:30%;
+width:200px;
+@media only screen and (max-width:900px){
+
+  width:160px;
+}
+@media only screen and (max-width:700px){
+
+  width:100px;
+}
 `
 
 
@@ -266,7 +308,7 @@ height:60vh;
 
 `
 const Scale = styled.div`
-transform:scale(1.5);
+
 @media only screen and (max-width:900px){
 
   font-size:15px;
@@ -417,12 +459,15 @@ const Navabar = () => {
        
        <Left>
         <Language>EN</Language>
+        <Link to="/contactus" style={{ textDecoration: 'none' }}>
+           <SubMenuItem>Contact US</SubMenuItem>
+           </Link>
         <Link to="/nurses" style={{ textDecoration: 'none' }}>
            <SubMenuItem>NHS</SubMenuItem>
            </Link>
  
            <Link to="/AboutUs" style={{ textDecoration: 'none' }}>
-           <SubMenuItem>About Us</SubMenuItem>
+           <SubbedMenuItem>About Us</SubbedMenuItem>
            </Link>
           
        </Left>
@@ -434,7 +479,7 @@ const Navabar = () => {
            </Link>
            
            <Link to ="/products/doll" style={{ textDecoration: 'none' }}>
-           <SubMenuItem>Shop</SubMenuItem>
+           <SubbedMenuItem>Shop</SubbedMenuItem>
            </Link>
          
             
