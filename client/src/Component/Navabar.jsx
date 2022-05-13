@@ -460,7 +460,7 @@ const Navabar = () => {
        <Left>
         <Language>EN</Language>
         <Link to="/contactus" style={{ textDecoration: 'none' }}>
-           <SubMenuItem>Contact US</SubMenuItem>
+           <SubMenuItem>Contact Us</SubMenuItem>
            </Link>
         <Link to="/nurses" style={{ textDecoration: 'none' }}>
            <SubMenuItem>NHS</SubMenuItem>
@@ -505,7 +505,7 @@ const Navabar = () => {
 
               <Product>
                   <ProductDetails>
-                      <Image src={product.img}/>
+                      <Image src={product.img1}/>
                       <Details>
                           <ProductName><b>Product:</b>{product.title}</ProductName>
                           <ProductId>{product.id}</ProductId>
